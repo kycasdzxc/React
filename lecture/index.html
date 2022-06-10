@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <!-- react가 동작하는 핵심적인 코드 -->
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <!-- 배포시에는 <script crossorigin src="https://unpkg.com/react@16/umd/react.production.js"></script> -->
+        <!-- react 코드를 웹에다 붙여주는 역할 -->
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    </head>
+    <body>
+        <div id="root">
+
+        </div>
+        <script>
+            const e = React.createElement; // html 태그를 만드는 것
+
+            class LikeButton extends React.Component {
+                constructor(props) { // 컴포넌트가 제일 먼저 실행되는 부분
+                    super(props);
+                }
+
+                render() { // 좋아요 버튼을 화면에 어떻게 표시할 것인지를 결정해주는 메서드
+                    return e('button', null, 'Like'); // 태그를 만들어주는 함수 <button>Like</button> 이런 태그를 만들겠다.
+                }
+            }
+        </script>
+        <script>
+            // React로 컴포넌트를 만들겠다. 웹에다 실제로 구현. 렌더링을 해준다. 화면에 반영
+            ReactDOM.render(e(LikeButton), document.querySelector('#root'));
+        </script>
+    </body>
+</html>
